@@ -1,7 +1,7 @@
 // @flow
 import 'whatwg-fetch'
 import Promise from 'es6-promise'
-import { API_BASE_URL, BEER_LIMIT_PER_PAGE } from '../config'
+import { API_BASE_URL } from '../config'
 
 Promise.polyfill()
 
@@ -14,7 +14,7 @@ const defaultHeaders = {
 export const startSession = () => (
   fetch(`${API_BASE_URL}/public/session.json`, {
     method: 'GET',
-    headers: defaultHeaders
+    headers: defaultHeaders,
   })
   .then(response => response.json())
   .then(session => session)
@@ -23,7 +23,7 @@ export const startSession = () => (
 export const getBeers = (session:string) => (
   fetch(`${API_BASE_URL}/public/beers.json`, {
     method: 'GET',
-    headers: defaultHeaders
+    headers: defaultHeaders,
   }).then(response => (
     response.json()
   ))

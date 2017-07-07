@@ -7,8 +7,8 @@ const Menu = ({ isOpen, pageWrapId, toggleMenu }) => (
     isOpen={isOpen}
     toggleMenu={toggleMenu}
   >
-
-    <h3 style={{ paddingTop: '50px' }}>Beers I like:</h3>
+    <h3 style={{ paddingTop: '50px' }} >Beers I like:</h3>
+    <hr />
     <p>
       This is exercise question 5 ;)
     </p>

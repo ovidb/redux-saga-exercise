@@ -78,11 +78,11 @@ class Main extends React.Component {
                   </ul>
                 </div>
                 <div className="footer-col col-md-4">
-                  <h3>LeanJS</h3>
+                  <h3>About LeanJS</h3>
                   <p>
                     <a href="https://leanjs.com/" target="_blank" rel="noopener noreferrer">LeanJS </a>
                     <span>
-                       is a boutique of excellence focused on Lean, JavaScript, UX, Agile, and <strong>people</strong>.
+                      is a boutique of excellence focused on Lean, JavaScript, UX, Agile, and people.
                     </span>
                   </p>
                 </div>
