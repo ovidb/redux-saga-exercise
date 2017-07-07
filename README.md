@@ -1,6 +1,6 @@
 ## redux-saga exercise
 
-The goal of this exercise is to learn redux-saga. There are thousands of tutorials online but there's no better way to learn than hacking it yourself.
+The goal of this exercise is to learn redux-saga.
 
 ## Requirements
 You need to be comfortable writing JavaScript (ES6: Module system, class, destructuring assignment).
