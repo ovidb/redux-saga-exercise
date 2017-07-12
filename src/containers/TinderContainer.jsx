@@ -6,7 +6,7 @@ import Tinder from '../components/Game/Tinder'
 import * as actions from '../actions'
 import { BEER_LIMIT_PER_PAGE } from '../config'
 
-class TinderContainer extends Container {
+export class TinderContainer extends Container {
   constructor (props) {
     super(props)
     this.setComponent(Tinder, { props })
@@ -20,13 +20,13 @@ class TinderContainer extends Container {
     }
   }
 
-  componentWillReceiveProps = (nextProps:Object) => {
+  componentWillReceiveProps = (nextProps) => {
     if (nextProps.session.id !== this.props.session.id) {
       this.props.fetchBeers()
     }
   }
 
-  next = (nextBeerIndex:?number) => {
+  next = (nextBeerIndex) => {
     const nextBeerIdx = this.props.currentBeerIndex + 1
     this.props.setCurrentBeerIndex(nextBeerIdx)
     if ((this.props.beers.length - nextBeerIdx) <= BEER_LIMIT_PER_PAGE) {
@@ -55,7 +55,7 @@ TinderContainer.defaultProps = {
   beer: { attr: {}, images: {} }
 }
 
-const mapStateToProps = (state:Object) => ({
+const mapStateToProps = (state) => ({
   beers: state.beers.data,
   beer: state.beers.data[state.beer.currentIndex],
   currentBeerIndex: state.beer.currentIndex,
