@@ -17,4 +17,9 @@ describe('Store', () => {
       }
     })
   })
+
+  it('The store should contain the runSaga function', () => {
+    const store = configureStore()
+    // Your test here
+  })
 })
