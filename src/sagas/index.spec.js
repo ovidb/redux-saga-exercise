@@ -3,7 +3,6 @@ import { getBeers, startSession as apiStartSession } from '../api'
 import { fetchingBeers, receiveSession, FETCHING_BEERS, RECEIVE_BEERS } from '../actions'
 import { fetchBeers, startSession } from './'
 import { isFetchingBeers, settings as settingsSelector } from '../selectors'
-import { expect } from 'chai'
 
 describe('#Saga: startSession', () => {
   it('should start a session', () => {
@@ -11,10 +10,10 @@ describe('#Saga: startSession', () => {
     const startSessionGenerator = startSession()
 
     const callApiStartSession = startSessionGenerator.next()
-    expect(callApiStartSession.value).to.be.deep.equal(call(apiStartSession))
+    expect(callApiStartSession.value).toEqual(call(apiStartSession))
 
     const putStartSession = startSessionGenerator.next(session)
-    expect(putStartSession.value).to.be.deep.equal(put(receiveSession(session)))
+    expect(putStartSession.value).toEqual(put(receiveSession(session)))
   })
 })
 
@@ -23,10 +22,10 @@ describe('#Saga: fetchBeers', () => {
     const fetchBeersGenerator = fetchBeers()
 
     const selectIsFetching = fetchBeersGenerator.next()
-    expect(selectIsFetching.value).to.be.deep.equal(select(isFetchingBeers))
+    expect(selectIsFetching.value).toEqual(select(isFetchingBeers))
 
     const putFetchingBeers = fetchBeersGenerator.next(false)
-    expect(putFetchingBeers.value).to.be.deep.equal(put(fetchingBeers(true)))
+    expect(putFetchingBeers.value).toEqual(put(fetchingBeers(true)))
 
     const settings = {
       session: {
@@ -34,25 +33,25 @@ describe('#Saga: fetchBeers', () => {
       }
     }
     const selectSettings = fetchBeersGenerator.next(true)
-    expect(selectSettings.value).to.be.deep.equal(select(settingsSelector))
+    expect(selectSettings.value).toEqual(select(settingsSelector))
 
     const callApiGetBeers = fetchBeersGenerator.next(settings)
-    expect(callApiGetBeers.value).to.be.deep.equal(call(getBeers, settings.session.id))
+    expect(callApiGetBeers.value).toEqual(call(getBeers, settings.session.id))
 
     const beers = []
     let action = fetchBeersGenerator.next(beers)
-    expect(action.value).to.be.deep.equal(put({ type: RECEIVE_BEERS, beers }))
+    expect(action.value).toEqual(put({ type: RECEIVE_BEERS, beers }))
 
     action = fetchBeersGenerator.next()
-    expect(action.value).to.be.deep.equal(put({ type: FETCHING_BEERS, isFetching: false }))
+    expect(action.value).toEqual(put({ type: FETCHING_BEERS, isFetching: false }))
   })
 
   it('should NOT fetch beers if it is already fetching beers', () => {
     const fetchBeersGenerator = fetchBeers()
     const selectIsFetching = fetchBeersGenerator.next()
-    expect(selectIsFetching.value).to.be.deep.equal(select(isFetchingBeers))
+    expect(selectIsFetching.value).toEqual(select(isFetchingBeers))
 
     const yieldedOutput = fetchBeersGenerator.next(true)
-    expect(yieldedOutput.done).to.be.equal(true)
+    expect(yieldedOutput.done).toEqual(true)
   })
 })
