@@ -10,15 +10,27 @@ describe('<TinderContainer />', () => {
     addBeerToCart: jest.fn(),
     closeSideMenu: jest.fn(),
     beers: [],
-    beer: {}
+    beer: {},
+    fetchBeers: jest.fn(),
+    session: {id: 0}
   }
 
-  wrapper = shallow(
-    <LoginContainer {...props} />
+  const wrapper = shallow(
+    <TinderContainer {...props} />
   )
 
   it('should render with default props', () => {
       expect(shallowToJson(wrapper)).toMatchSnapshot()
     })
 
+  it('Method #componentWillReceiveProps() should conditionally call fetchBeers', () => {
+    // console.log(wrapper.instance())
+    const instance = wrapper.instance()
+    instance.componentWillReceiveProps({ session: {id: 1} })
+    instance.startSession = jest.fn()
+    expect(props.fetchBeers).toHaveBeenCalled()
+  })
+  it('Method #like() should call next()', () => {
+
+  })
 })

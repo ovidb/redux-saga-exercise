@@ -55,14 +55,14 @@ TinderContainer.defaultProps = {
   beer: { attr: {}, images: {} }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   beers: state.beers.data,
   beer: state.beers.data[state.beer.currentIndex],
   currentBeerIndex: state.beer.currentIndex,
   session: state.settings.session
 })
 
-const mapDispatchToProps = ({
+export const mapDispatchToProps = ({
   fetchBeers: actions.fetchBeers,
   setCurrentBeerIndex: actions.setCurrentBeerIndex,
   startSession: actions.startSession
