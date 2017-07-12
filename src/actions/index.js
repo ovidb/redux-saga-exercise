@@ -7,22 +7,22 @@ export const RECEIVE_SESSION = 'RECEIVE_SESSION'
 export const START_SESSION = 'START_SESSION'
 
 
-export const receiveSession = (session:Object) => ({
+export const receiveSession = (session) => ({
   type: RECEIVE_SESSION,
   session
 })
 
-export const fetchingBeers = (isFetching:boolean) => ({
+export const fetchingBeers = (isFetching) => ({
   type: FETCHING_BEERS,
   isFetching
 })
 
-export const receiveBeers = (beers:Array<Object>) => ({
+export const receiveBeers = (beers) => ({
   type: RECEIVE_BEERS,
   beers
 })
 
-export const setCurrentBeerIndex = (currentIndex:number) => ({
+export const setCurrentBeerIndex = (currentIndex) => ({
   type: CURRENT_BEER_INDEX,
   currentIndex
 })
