@@ -28,4 +28,7 @@ describe('#API', () => {
       expect(response.data).toEqual(session)
     })
   })
+
+//Implement a test for getBeers here!
+
 })
