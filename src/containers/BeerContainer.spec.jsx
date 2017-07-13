@@ -17,10 +17,10 @@ describe('<BeerContainer />', () => {
     })
 
   it('Method #componentWillReceiveProps() should conditionally call setLoadingBeer(true)', () => {
-
+    //TODO implement test
   })
 
   it('Method #setLoadingBeer() should set state of loadingBeer', () => {
-
+    //TODO implement test
   })
 })

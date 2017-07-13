@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Actions /> should render with props 1`] = `
+<div
+  className="container"
+  style={
+    Object {
+      "background": "white",
+      "borderRadius": "0 0 25px 25px",
+    }
+  }
+>
+  <ul
+    className="list-unstyled list-inline text-center game-actions"
+  >
+    <li>
+      <button
+        className="btn btn-danger btn-circle btn-xl"
+        name="dislikeBtn"
+        onClick={[Function]}
+        type="button"
+      >
+        <i
+          aria-hidden="true"
+          className="fa fa-times"
+        />
+      </button>
+    </li>
+    <li />
+    <li>
+      <button
+        className="btn btn-success btn-circle btn-xl"
+        name="likeBtn"
+        onClick={[Function]}
+        type="button"
+      >
+        <i
+          aria-hidden="true"
+          className="fa fa-heart"
+        />
+      </button>
+    </li>
+  </ul>
+</div>
+`;
