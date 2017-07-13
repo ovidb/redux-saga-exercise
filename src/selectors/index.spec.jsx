@@ -13,14 +13,4 @@ it('should return state.beers.isFetching', () => {
   ).toBeTruthy()
 })
 
-it('should return state.settings', () => {
-  expect(
-    settings(
-      {
-        settings: {
-          session: {}
-        }
-      }
-    )
-  ).toEqual({session: {}})
-})
+//TODO implement remaining test for settings selector
