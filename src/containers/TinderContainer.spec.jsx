@@ -20,8 +20,12 @@ describe('<TinderContainer />', () => {
     <TinderContainer {...props} />
   )
 
-  it('should render with default props', () => {
+    it('should render with default props', () => {
       expect(shallowToJson(wrapper)).toMatchSnapshot()
+    })
+
+    it('Method #componentDidMount() should...', () => {
+      //TODO implement test
     })
 
   it('Method #componentWillReceiveProps() should conditionally call fetchBeers', () => {
@@ -31,10 +35,18 @@ describe('<TinderContainer />', () => {
     expect(props.fetchBeers).toHaveBeenCalled()
   })
 
+  it('Method #next() should...', () => {
+    //TODO implement test
+  })
+
   it('Method #like() should call next()', () => {
     const instance = wrapper.instance()
     instance.next = jest.fn()
     instance.like()
     expect(instance.next).toHaveBeenCalled()
+  })
+
+  it('Method #dislike() should...', () => {
+    //TODO implement test
   })
 })
