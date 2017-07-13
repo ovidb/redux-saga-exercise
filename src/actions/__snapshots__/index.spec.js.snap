@@ -1,18 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Returns an Action type CURRENT_BEER_INDEX 1`] = `
-Object {
-  "currentIndex": 1,
-  "type": "CURRENT_BEER_INDEX",
-}
-`;
-
-exports[`Returns an Action type FETCH_BEERS 1`] = `
-Object {
-  "type": "FETCH_BEERS",
-}
-`;
-
 exports[`Returns an Action type FETCHING_BEERS 1`] = `
 Object {
   "isFetching": Object {
@@ -22,27 +9,11 @@ Object {
 }
 `;
 
-exports[`Returns an Action type RECEIVE_BEERS 1`] = `
-Object {
-  "beers": Object {
-    "data": Array [],
-    "isFetching": false,
-  },
-  "type": "RECEIVE_BEERS",
-}
-`;
-
 exports[`Returns an Action type RECEIVE_SESSION 1`] = `
 Object {
   "session": Object {
     "id": "reactJSacademy",
   },
   "type": "RECEIVE_SESSION",
-}
-`;
-
-exports[`Returns an Action type START_SESSION 1`] = `
-Object {
-  "type": "START_SESSION",
 }
 `;
