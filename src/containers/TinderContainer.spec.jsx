@@ -16,17 +16,18 @@ describe('<TinderContainer />', () => {
     setCurrentBeerIndex: actions.setCurrentBeerIndex
   }
 
+  // should this shallow be inside each it()  ?
   const wrapper = shallow(
     <TinderContainer {...props} />
   )
 
-    it('should render with default props', () => {
-      expect(shallowToJson(wrapper)).toMatchSnapshot()
-    })
+  it('should render with default props', () => {
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
+  })
 
-    it('Method #componentDidMount() should...', () => {
-      //TODO implement test
-    })
+  it('Method #componentDidMount() should...', () => {
+    //TODO implement test
+  })
 
   it('Method #componentWillReceiveProps() should conditionally call fetchBeers', () => {
     const instance = wrapper.instance()

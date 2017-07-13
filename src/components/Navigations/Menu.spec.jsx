@@ -6,7 +6,6 @@ import Menu from './Menu'
 
 describe('<Menu />', () => {
   const props = {
-
     isOpen: false,
     pageWrapId: '',
     toggleMenu: () => {}

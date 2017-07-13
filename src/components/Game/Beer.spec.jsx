@@ -15,8 +15,8 @@ describe('<Beer />', () => {
   )
 
   it('should render with props', () => {
-      expect(shallowToJson(wrapper)).toMatchSnapshot()
-    })
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
+  })
 
   it('Method #componentDidMount() should assign beerImgWrapper.style.minHeight', () => {
     //TODO implement test

@@ -14,8 +14,8 @@ describe('<Actions />', () => {
   )
 
   it('should render with props', () => {
-      expect(shallowToJson(wrapper)).toMatchSnapshot()
-    })
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
+  })
 
   it('Method #componentDidMount() should call likeButton.focus()', () => {
     //TODO implement test

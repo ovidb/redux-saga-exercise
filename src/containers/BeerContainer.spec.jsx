@@ -13,8 +13,8 @@ describe('<BeerContainer />', () => {
   )
 
   it('should render with props', () => {
-      expect(shallowToJson(wrapper)).toMatchSnapshot()
-    })
+    expect(shallowToJson(wrapper)).toMatchSnapshot()
+  })
 
   it('Method #componentWillReceiveProps() should conditionally call setLoadingBeer(true)', () => {
     //TODO implement test

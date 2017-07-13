@@ -5,15 +5,15 @@ describe('Store', () => {
     const store = configureStore()
 
     expect(store.getState()).toEqual({
-      "beer": {
-        "currentIndex": 0
+      beer: {
+        currentIndex: 0
       },
-      "beers": {
-        "data": [],
-        "isFetching": false
+      beers: {
+        data: [],
+        isFetching: false
       },
-      "settings": {
-        "session": {}
+      settings: {
+        session: {}
       }
     })
   })
