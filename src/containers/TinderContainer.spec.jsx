@@ -12,7 +12,8 @@ describe('<TinderContainer />', () => {
     beers: [],
     beer: {},
     fetchBeers: jest.fn(),
-    session: {id: 0}
+    session: {id: 0},
+    setCurrentBeerIndex: actions.setCurrentBeerIndex
   }
 
   const wrapper = shallow(
@@ -24,13 +25,16 @@ describe('<TinderContainer />', () => {
     })
 
   it('Method #componentWillReceiveProps() should conditionally call fetchBeers', () => {
-    // console.log(wrapper.instance())
     const instance = wrapper.instance()
-    instance.componentWillReceiveProps({ session: {id: 1} })
     instance.startSession = jest.fn()
+    instance.componentWillReceiveProps({ session: {id: 1} })
     expect(props.fetchBeers).toHaveBeenCalled()
   })
-  it('Method #like() should call next()', () => {
 
+  it('Method #like() should call next()', () => {
+    const instance = wrapper.instance()
+    instance.next = jest.fn()
+    instance.like()
+    expect(instance.next).toHaveBeenCalled()
   })
 })
