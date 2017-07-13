@@ -33,8 +33,7 @@ export function* startSession () {
   yield put(receiveSession(session))
 }
 
-export default function* rootSage () {
+export default function* rootSaga () {
   yield takeEvery(FETCH_BEERS, fetchBeers)
   yield takeEvery(START_SESSION, startSession)
 }
-

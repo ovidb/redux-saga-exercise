@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BeerContainer /> should render with default props 1`] = `
+<Beer
+  beer={Object {}}
+  loadingBeer={true}
+  setLoadingBeer={[Function]}
+/>
+`;
