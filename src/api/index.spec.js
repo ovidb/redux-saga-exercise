@@ -19,15 +19,13 @@ describe('#API', () => {
   const session = {
     "id": "reactJSacademy"
   }
-  let data
-  data = session
   beforeAll(() => {
-    mockFetch(data)
+    mockFetch(session)
   })
 
-  it('startSession()', async () => {
-    const response = await api.startSession()
-    console.log(response)
-    expect(response.data).toEqual(data)
+  it('startSession()', () => {
+    api.startSession().then((response) => {
+      expect(response.data).toEqual(session)
+    })
   })
 })
