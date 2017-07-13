@@ -13,4 +13,5 @@ describe('#Reducer: Beers', () => {
   })
   it(`When action ${FETCHING_BEERS} returns state`, () => {
     //TODO implement test
+  })
 })
