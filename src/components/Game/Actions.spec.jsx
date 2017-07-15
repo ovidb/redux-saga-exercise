@@ -4,9 +4,11 @@ import { shallowToJson } from 'enzyme-to-json'
 import Actions from './Actions'
 
 describe('<Actions />', () => {
+  const dislike = jest.fn()
+  const like = jest.fn()
   const props = {
-    like: () => {},
-    dislike: () => {}
+    dislike,
+    like
   }
 
   const wrapper = shallow(
@@ -15,7 +17,12 @@ describe('<Actions />', () => {
 
   it('should render with props', () => {
       expect(shallowToJson(wrapper)).toMatchSnapshot()
-    })
+  })
+
+  it('should call dislike function when clicked', () => {
+     wrapper.find('button').first().simulate('click')
+     expect(dislike).toHaveBeenCalled()
+  })
 
   it('Method #componentDidMount() should call likeButton.focus()', () => {
     //TODO implement test
